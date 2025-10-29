@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P4Australia - People's Purple Protopian Party</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .chart-container-sm {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 150px;
+            max-height: 200px;
+        }
+        .flow-box {
+            border: 2px solid #6A4C93;
+            background-color: #f4f0f8;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            width: 80%;
+            font-weight: 600;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .flow-arrow {
+            width: 2px;
+            height: 30px;
+            background-color: #6A4C93;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-7xl">
+
+        <header class="text-center my-12 md:my-16">
+            <h1 class="text-5xl md:text-7xl font-black text-[#6A4C93]">People's Purple Protopian Party</h1>
+            <h2 class="text-3xl md:text-5xl font-bold text-[#1982C4]">P4Australia (Pee for Australia)</h2>
+            <p class="text-2xl md:text-3xl mt-6 font-bold">Pissed off with politics?</p>
+            <p class="text-lg md:text-xl mt-4 max-w-3xl mx-auto">
+                You're not alone. The old Left vs. Right game is broken. It's time for Australia's "purple patch" — a new way of thinking that isn't divisive, but regenerative. We're building a 'protopian' future: not a perfect utopia, but a *better* one, step by practical step.
+            </p>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <section class="md:col-span-2 bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h3 class="text-2xl md:text-3xl font-bold text-center text-[#6A4C93] mb-4">The Old System vs. The Protopian Way</h3>
+                <p class="text-base md:text-lg text-center max-w-4xl mx-auto mb-6">
+                    The current political system is designed for conflict. It's adversarial, short-sighted, and degenerative. P4Australia is designed for collaboration. We're focused on long-term regenerative policies, transparency, and building community value.
+                </p>
+                <div class="chart-container h-80 md:h-[450px] max-h-[500px]">
+                    <canvas id="problemChart"></canvas>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-lg shadow-lg p-6 md:p-8 flex flex-col justify-center">
+                <h3 class="text-2xl md:text-3xl font-bold text-center text-[#6A4C93] mb-4">The Purple Synthesis</h3>
+                <p class="text-base md:text-lg text-center max-w-xl mx-auto mb-6">
+                    We're not Left (Blue) or Right (Red). We're Purple. We take the best ideas from all sides—personal sovereignty, community care, environmental stewardship, and economic innovation—and synthesize them into a coherent, ethical, and evolutionary framework.
+                </p>
+                <div class="flex items-center justify-center space-x-4 mt-6">
+                    <div class="p-6 rounded-lg bg-[#1982C4] text-white text-2xl font-black shadow-md">LEFT</div>
+                    <div class="text-5xl font-bold text-[#6A4C93]">+</div>
+                    <div class="p-6 rounded-lg bg-[#FF595E] text-white text-2xl font-black shadow-md">RIGHT</div>
+                    <div class="text-5xl font-bold text-gray-800">=</div>
+                    <div class="p-8 rounded-lg bg-[#6A4C93] text-white text-4xl font-black shadow-xl scale-110">PURPLE</div>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h3 class="text-2xl md:text-3xl font-bold text-center text-[#6A4C93] mb-4">Pillar 1: Sovereign Identity (The 'Aura')</h3>
+                <p class="text-base md:text-lg text-center max-w-xl mx-auto mb-6">
+                    Your identity is yours. We propose the 'Sovereign Aura,' a personal digital twin that gives you full ownership and control over your data. You decide who sees your health records, your skills, or your economic activity.
+                </p>
+                <div class="chart-container h-72 md:h-80 max-h-350px">
+                    <canvas id="auraChart"></canvas>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h3 class="text-2xl md:text-3xl font-bold text-center text-[#6A4C93] mb-4">Pillar 2: The Braided Economy (C-Hour)</h3>
+                <p class="text-base md:text-lg text-center max-w-xl mx-auto mb-6">
+                    Our economy misses so much value. The 'Braided Economy' weaves the traditional $AUD market with the 'Community-Hour' (C-Hour)—a non-financial, non-taxable asset you earn for regenerative work like volunteering, elderly care, or environmental restoration.
+                </p>
+                <div class="chart-container">
+                    <canvas id="economyChart"></canvas>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h3 class="text-2xl md:text-3xl font-bold text-center text-[#6A4C93] mb-4">Pillar 3: Fractal Governance (Real Democracy)</h3>
+                <p class="text-base md:text-lg text-center max-w-xl mx-auto mb-6">
+                    Stop voting once every 3 years. 'Fractal Governance' is a new model of democracy powered by local DAOs (Decentralized Autonomous Organizations). Your voice is heard directly on local issues, and your representatives are truly accountable, from the ground up.
+                </p>
+                <div class="flex flex-col items-center space-y-2 mt-6">
+                    <div class="flow-box text-[#1982C4]">NATIONAL DAO (Federal Policy)</div>
+                    <div class="flow-arrow"></div>
+                    <div class="flow-box text-[#80ED99]">REGIONAL DAO (State Issues)</div>
+                    <div class="flow-arrow"></div>
+                    <div class="flow-box text-[#FFCA3A]">LOCAL DAO (Your Community)</div>
+                    <div class="flow-arrow"></div>
+                    <div class="flow-box bg-[#6A4C93] text-white">YOU (Sovereign Member)</div>
+                </div>
+            </section>
+
+            <section class="md:col-span-2 bg-[#6A4C93] text-white rounded-lg shadow-xl p-8 md:p-12 text-center">
+                <h3 class="text-3xl md:text-4xl font-black">Join the Foundation: We Need 1500 Members!</h3>
+                <p class="text-lg md:text-xl mt-4 max-w-3xl mx-auto">
+                    To make this real, we have to get on the ballot. Australian law requires a new political party to have at least 1500 registered members. This is the first, most crucial step. Stop being pissed off and start building.
+                </p>
+                <div class="chart-container-sm mt-8">
+                    <canvas id="memberChart"></canvas>
+                </div>
+                <div class="mt-4">
+                    <span id="memberCount" class="text-4xl font-bold text-[#80ED99]">150</span>
+                    <span class="text-2xl"> / 1500 Members</span>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-center text-gray-500 mt-12 py-6 border-t border-gray-300">
+            <p>&copy; 2025 People's Purple Protopian Party of Australia (P4Australia). It's time for a fair go.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        };
+
+        const chartTooltipConfig = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    },
+                    backgroundColor: '#111827',
+                    titleFont: { size: 16, weight: 'bold' },
+                    bodyFont: { size: 14 },
+                    padding: 12,
+                    cornerRadius: 6,
+                    displayColors: true
+                },
+                legend: {
+                    labels: {
+                        font: {
+                            size: 14,
+                            family: 'Inter'
+                        }
+                    }
+                }
+            },
+            maintainAspectRatio: false,
+            responsive: true
+        };
+
+        new Chart(document.getElementById('problemChart'), {
+            type: 'radar',
+            data: {
+                labels: ['Transparency', 'Long-Term Vision', 'Community Focus', 'Regenerative', 'Adversarial'],
+                datasets: [
+                    {
+                        label: 'Old Parties (Red/Blue)',
+                        data: [2, 1, 3, 1, 9],
+                        backgroundColor: 'rgba(255, 89, 94, 0.2)',
+                        borderColor: '#FF595E',
+                        borderWidth: 2,
+                        pointBackgroundColor: '#FF595E'
+                    },
+                    {
+                        label: 'P4Australia (Purple)',
+                        data: [9, 9, 10, 10, 1],
+                        backgroundColor: 'rgba(106, 76, 147, 0.2)',
+                        borderColor: '#6A4C93',
+                        borderWidth: 2,
+                        pointBackgroundColor: '#6A4C93'
+                    }
+                ]
+            },
+            options: {
+                ...chartTooltipConfig,
+                scales: {
+                    r: {
+                        angleLines: { color: 'rgba(0, 0, 0, 0.1)' },
+                        grid: { color: 'rgba(0, 0, 0, 0.1)' },
+                        pointLabels: {
+                            font: { size: 14, weight: '600', family: 'Inter' },
+                            color: '#374151'
+                        },
+                        ticks: {
+                            backdropColor: 'rgba(0,0,0,0)',
+                            color: '#6B7280',
+                            stepSize: 2,
+                            font: { size: 12 }
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 10
+                    }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('auraChart'), {
+            type: 'doughnut',
+            data: {
+                labels: [
+                    ['Sovereign', 'Health Data'],
+                    'C-Hour Economy',
+                    ['Fractal', 'Governance'],
+                    ['Verifiable', 'Skills'],
+                    'Identity'
+                ],
+                datasets: [{
+                    label: 'Your Sovereign Aura',
+                    data: [30, 25, 20, 15, 10],
+                    backgroundColor: [
+                        '#1982C4',
+                        '#80ED99',
+                        '#6A4C93',
+                        '#FFCA3A',
+                        '#FF595E'
+                    ],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 4
+                }]
+            },
+            options: {
+                ...chartTooltipConfig,
+                plugins: {
+                    ...chartTooltipConfig.plugins,
+                    legend: {
+                        ...chartTooltipConfig.plugins.legend,
+                        position: 'bottom',
+                        labels: {
+                            ...chartTooltipConfig.plugins.legend.labels,
+                            generateLabels: (chart) => {
+                                const data = chart.data;
+                                if (data.labels.length && data.datasets.length) {
+                                    return data.labels.map((label, i) => {
+                                        const meta = chart.getDatasetMeta(0);
+                                        const style = meta.controller.getStyle(i);
+                                        return {
+                                            text: Array.isArray(label) ? label.join(' ') : label,
+                                            fillStyle: style.backgroundColor,
+                                            strokeStyle: style.borderColor,
+                                            lineWidth: style.borderWidth,
+                                            hidden: isNaN(data.datasets[0].data[i]) || meta.data[i].hidden,
+                                            index: i
+                                        };
+                                    });
+                                }
+                                return [];
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('economyChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Current Economy', ['Protopian', 'Economy']],
+                datasets: [
+                    {
+                        label: '$AUD (Taxable)',
+                        data: [100, 100],
+                        backgroundColor: '#1982C4',
+                        borderColor: '#1982C4',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'C-Hours (Non-Financial)',
+                        data: [0, 40],
+                        backgroundColor: '#80ED99',
+                        borderColor: '#80ED99',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                ...chartTooltipConfig,
+                scales: {
+                    x: {
+                        stacked: true,
+                        grid: { display: false },
+                        ticks: { font: { size: 14, family: 'Inter' } }
+                    },
+                    y: {
+                        stacked: true,
+                        beginAtZero: true,
+                        title: { display: true, text: 'Recognized Societal Value', font: { size: 14, family: 'Inter' } },
+                        ticks: { font: { size: 14, family: 'Inter' } }
+                    }
+                }
+            }
+        });
+
+        const currentMembers = 150;
+        const totalMembers = 1500;
+        document.getElementById('memberCount').innerText = currentMembers;
+
+        new Chart(document.getElementById('memberChart'), {
+            type: 'bar',
+            data: {
+                labels: [['Members', 'Required']],
+                datasets: [
+                    {
+                        label: 'Current Members',
+                        data: [currentMembers],
+                        backgroundColor: '#80ED99',
+                        barPercentage: 0.8,
+                        categoryPercentage: 0.8
+                    },
+                    {
+                        label: 'Remaining',
+                        data: [totalMembers - currentMembers],
+                        backgroundColor: 'rgba(255, 255, 255, 0.3)',
+                        barPercentage: 0.8,
+                        categoryPercentage: 0.8
+                    }
+                ]
+            },
+            options: {
+                indexAxis: 'y',
+                ...chartTooltipConfig,
+                plugins: {
+                    ...chartTooltipConfig.plugins,
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        ...chartTooltipConfig.plugins.tooltip,
+                        callbacks: {
+                            ...chartTooltipConfig.plugins.tooltip.callbacks,
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed.x !== null) {
+                                    label += context.parsed.x;
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        stacked: true,
+                        display: false,
+                        max: totalMembers
+                    },
+                    y: {
+                        stacked: true,
+                        display: false,
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
